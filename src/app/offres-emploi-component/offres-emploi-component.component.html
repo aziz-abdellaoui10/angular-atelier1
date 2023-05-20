@@ -1,0 +1,16 @@
+<h1>Liste des offres d'emploi</h1>
+
+<form (ngSubmit)="rechercherOffresEmploi()">
+    <input type="text" [(ngModel)]="entrepriseRecherchee" name="entreprise" placeholder="Rechercher par entreprise">
+    <button type="submit">Rechercher</button>
+  </form>
+  
+
+<ul>
+  <li *ngFor="let emploi of listeEmploi">
+    {{ emploi.titre }} - {{ emploi.reference }}
+    <button [disabled]="!emploi.etat">Postuler</button>
+  </li>
+</ul>
+
+<button (click)="calculerBilan()">Bilan</button>

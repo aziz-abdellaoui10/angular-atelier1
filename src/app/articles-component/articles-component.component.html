@@ -1,0 +1,17 @@
+<p>{{titre}}</p>
+<form>
+    <input type="text" [(ngModel)]='articlesCount' name="article" (change)="filterArticles()">
+</form>
+<ng-container *ngFor="let article of listeArticles">
+    <div *ngIf="article.categorie !== 'Travail'" [ngStyle]="{'color': article.categorie === 'Education' ? 'blue' : 'black'}"> 
+        {{ article.titre }}
+        <br/>
+        Auteur: {{article.auteur}}
+        <br/>
+        Date: {{article.date}}
+        <br/>
+        Contenu: {{article.contenu}}
+        <hr/>
+    </div>
+</ng-container>
+  
